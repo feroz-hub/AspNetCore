@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-//middlware 1
+//middleware 1
 app.Use(async ( context, next) => {
     await context.Response.WriteAsync("Hello");
     await next(context);
@@ -14,9 +14,9 @@ app.Use(async (context, next) => {
 });
 
 //middleware 3
-app.Run(async (HttpContext context) => {
+app.Run(async context => {
     await context.Response.WriteAsync("Hello again");
-});
+});  
 
 
 app.Run();
