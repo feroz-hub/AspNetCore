@@ -8,7 +8,7 @@ var app = builder.Build();
 
 //middlware 1
 app.Use(async (HttpContext context, RequestDelegate next) => {
-    await context.Response.WriteAsync("From Midleware 1");
+    await context.Response.WriteAsync("From Middleware 1");
     await next(context);
 });
 
