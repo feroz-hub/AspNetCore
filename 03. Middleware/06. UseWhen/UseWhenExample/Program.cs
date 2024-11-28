@@ -6,13 +6,13 @@ app.UseWhen(context =>context.Request.Query.ContainsKey("username"),
     {
         app.Use(async (context, next) =>
         {
-            await context.Response.WriteAsync("Hello form Middleware Branch");
+            await context.Response.WriteAsync("Hello form Middleware Branch\n");
             await next();
         });
     });
 
 app.Run(async context =>
 {
-    await context.Response.WriteAsync("Hello from middleware at main chain");
+    await context.Response.WriteAsync("Hello from middleware at main chain\n");
 });
 app.Run();
