@@ -7,7 +7,7 @@ public class HelloCustomMiddleware(RequestDelegate next)
         if (httpContext.Request.Query.ContainsKey("firstname") && httpContext.Request.Query.ContainsKey("lastname"))
         {
             string fullname = httpContext.Request.Query["firstname"] + httpContext.Request.Query["lastname"];
-            await httpContext.Response.WriteAsync($"fullname:\n"+fullname);
+            await httpContext.Response.WriteAsync(fullname);
         }
 
         await next(httpContext);
